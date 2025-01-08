@@ -1,0 +1,44 @@
+# macOS 시스템 파일
+.DS_Store
+
+# Build and Derived Data
+build/
+DerivedData/
+
+# Xcode specific
+*.xcworkspace
+*.xccheckout
+*.xcuserstate
+*.moved-aside
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+*.mode2v3
+!default.mode1v3
+!default.mode2v3
+
+# Swift Package Manager
+/.build/
+# Xcode automatically generated
+*.xcodeproj/
+*.xcworkspace/
+
+# CocoaPods
+Pods/
+
+# Carthage
+Carthage/Build/
+
+# Fastlane
+fastlane/report.xml
+fastlane/screenshots
+fastlane/test_output
+
+# Environment
+.env
+.env.*
+*.key
+
+# Logs
+*.log
+
