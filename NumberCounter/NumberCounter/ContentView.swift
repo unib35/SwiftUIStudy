@@ -33,6 +33,17 @@ struct ContentView: View {
                 
                 Spacer()
                 
+                Button("+2", action:{
+                    self.count += 2
+                })
+                .font(.largeTitle)
+                .padding()
+                .background(Color.blue)
+                .clipShape(.circle)
+                .foregroundStyle(.white)
+                
+                Spacer()
+                
                 Button(action: {
                     self.count += 1
                 }) {
