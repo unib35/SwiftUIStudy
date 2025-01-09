@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView2: View {
     var body: some View {
         Text("Hello World")
-            .font(.largeTitle)
+            .font(.system(size: 60))
             .border(Color.black)
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             .background(Color.blue)
