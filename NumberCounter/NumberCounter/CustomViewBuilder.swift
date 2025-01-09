@@ -22,10 +22,23 @@ struct MyVStack<Content: View>: View {
     }
 }
 
+// 커스텀 레이블 스타일 (레이아웃)
+struct HorizontalLabelStyle: LabelStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        HStack(alignment: .center) {
+            configuration.icon
+                .padding(5)
+            configuration.title
+        }
+    }
+}
+
 struct CustomViewBuilder: View {
     var body: some View {
         MyVStack{
             Text("Custom VStack")
+            Label("Custom Label", systemImage: "star.fill")
+                .labelStyle(HorizontalLabelStyle())
         }
     }
 }
