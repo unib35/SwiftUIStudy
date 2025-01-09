@@ -54,6 +54,14 @@ struct VXZStack: View {
                         Text("$3000")
                     }
                 }
+                HStack {
+                    Image(systemName: "airplane")
+                    Text("Flight times:")
+                        .layoutPriority(1) // 우선순위 부여
+                    Text("London")
+                }
+                .font(.largeTitle)
+                .lineLimit(1) // 글씨 크기로 인해 줄 바뀜을 제한
             }
         }
 }
