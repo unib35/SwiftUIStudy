@@ -126,15 +126,23 @@ struct ContentView: View {
         resetNumbers()
     }
     func resetNumbers() {
-        //숫자 다시 뽑는 로직
+        // 숫자 다시 뽑는 로직
         number1 = Int.random(in: setRandomNumMin...setRandomNumMax)
         number2 = Int.random(in: setRandomNumMin...setRandomNumMax)
-        resultNumber = Int.random(in: 1...100)
         op = opList.randomElement()!
         
-        
-        
+        let isCorrect = Bool.random() // 정답 여부를 랜덤으로 결정
+        if isCorrect {
+            // 정답인 경우
+            resultNumber = calculateResult(number1, number2, op)
+        } else {
+            // 오답인 경우
+            repeat {
+                resultNumber = Int.random(in: setRandomNumMin...setRandomNumMax)
+            } while resultNumber == calculateResult(number1, number2, op)
+        }
     }
+
     
     func calculateResult(_ num1 : Int, _ num2: Int, _ op: Character) -> Int {
         switch op {
