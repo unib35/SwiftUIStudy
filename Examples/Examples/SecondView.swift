@@ -22,5 +22,6 @@ struct SecondView: View {
 
 #Preview {
     SecondView()
+    //느슨한 결합으로 인해 초기화 위한 환경변수 세팅 필요
         .environment(TimerData())
 }
