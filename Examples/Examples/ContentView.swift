@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var timerData: TimerData = TimerData()
+    @State var timerData: TimerData = TimerData()
     
     var body: some View {
         NavigationView {
@@ -21,6 +21,10 @@ struct ContentView: View {
                 Button(action: resetCount) {
                     Text("Reset Counter")
                 }
+                
+                NavigationLink("Next Screen", destination: {
+                    SecondView(timerData: timerData)
+                })
             }
         }
     }

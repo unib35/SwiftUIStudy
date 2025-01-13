@@ -8,8 +8,9 @@
 import Foundation
 import Combine
 
+@Observable
 class TimerData: ObservableObject {
-    @Published var timeCount = 0
+    var timeCount = 0
     var timer: Timer?
     
     init() {
