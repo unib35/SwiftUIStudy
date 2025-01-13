@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MySceneStorage: View {
+    
     @SceneStorage("city") var city: String = ""
     
     var body: some View {
