@@ -23,10 +23,11 @@ struct ContentView: View {
                 }
                 
                 NavigationLink("Next Screen", destination: {
-                    SecondView(timerData: timerData)
+                    SecondView()
                 })
             }
         }
+        .environment(timerData)
     }
     
     func resetCount() {
