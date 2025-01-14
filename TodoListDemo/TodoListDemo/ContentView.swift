@@ -46,8 +46,37 @@ struct ContentView: View {
                             }
                         }
                     }
+                    .onDelete(perform: deleteItem)
+                    .onMove(perform: moveItem)
                 }
             }
+            
+            
+            .navigationTitle(Text("To Do List"))
+            // 네비게이션 바 타이블 스타일 변경
+            //.navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                // Toolbar에 버튼 추가
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(action: {
+                        print("Add button tapped")
+                    }) {
+                        HStack (spacing: 0) {
+                            Text("ADD")
+                            Image(systemName: "plus")
+                        }
+                        
+                    }
+                }
+                ToolbarItem(placement: .topBarLeading) {
+                    Button(action: {
+                        print("Add button tapped")
+                    }) {
+                        Text("EDIT")
+                    }
+                }
+            }
+            
             .navigationDestination(for: Int.self) { count in
                 Text("Number of tasks: \(count)")
             }
@@ -67,6 +96,17 @@ struct ContentView: View {
             }
         }
     }
+    
+    func deleteItem(at offsets: IndexSet) {
+        print("deleteItem : \(offsets)")
+        listData.remove(atOffsets: offsets)
+    }
+    
+    func moveItem(from source: IndexSet, to destination: Int) {
+        print("source: \(source), destination: \(destination)")
+        listData.move(fromOffsets: source, toOffset: destination)
+    }
+    
 }
 
 #Preview {
