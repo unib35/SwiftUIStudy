@@ -22,7 +22,7 @@ struct MyVStack: View {
         }
 
         // 2. alignment 정렬
-        // .leading .center .trailing .firstTextBaseline .lastTextBaseline
+        // .leading .center .trailing
         VStack(alignment: .leading) {
             Text("Leading Alignment")
                 .border(Color.red)

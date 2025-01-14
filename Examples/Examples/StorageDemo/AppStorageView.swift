@@ -20,3 +20,4 @@ struct AppStorageView: View {
 #Preview {
     AppStorageView()
 }
+
