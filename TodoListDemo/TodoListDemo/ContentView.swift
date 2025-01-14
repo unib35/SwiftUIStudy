@@ -24,29 +24,47 @@ struct ContentView: View {
     ]
     
     var body: some View {
-        List {
-            Section(header: Text("Settings")) {
-                Toggle(isOn: $toggleStatus) {
-                    Text("Allow Notifications")
+        NavigationStack {
+            List {
+                Section(header: Text("Settings")) {
+                    Toggle(isOn: $toggleStatus) {
+                        Text("Allow Notifications")
+                    }
+                    
+                    NavigationLink(value: listData.count) {
+                        Text("View Task Count")
+                    }
                 }
-            }
-            
-            
-            Section(header: Text("To do tasks").textCase(nil)){
-                ForEach(listData) { item in
-                    HStack{
-                        Image(systemName: item.imageName)
-                        Text(item.task)
+                
+                
+                Section(header: Text("To do tasks").textCase(nil)){
+                    ForEach(listData) { item in
+                        NavigationLink(value: item.task) {
+                            HStack {
+                                Image(systemName: item.imageName)
+                                Text(item.task)
+                            }
+                        }
                     }
                 }
             }
-        }
-        .refreshable {
-            listData = [
-                ToDoItem(task: "Order dinner", imageName: "dollarsign.circle.fill"),
-                ToDoItem(task: "Call financial advisor", imageName: "phone.fill"),
-                ToDoItem(task: "Sell the kids", imageName: "person.2.fill")
-            ]
+            .navigationDestination(for: Int.self) { count in
+                Text("Number of tasks: \(count)")
+            }
+            .navigationDestination(for: String.self) { task in
+                VStack {
+                    Text("Selected Task: \(task)")
+                }
+                .background(Color.red)
+                
+            }
+            .refreshable {
+                listData = [
+                    ToDoItem(task: "Order dinner", imageName: "dollarsign.circle.fill"),
+                    ToDoItem(task: "Call financial advisor", imageName: "phone.fill"),
+                    ToDoItem(task: "Sell the kids", imageName: "person.2.fill")
+                ]
+            }
         }
     }
 }
