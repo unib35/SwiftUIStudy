@@ -24,10 +24,12 @@ struct CarDetail: View {
                     .font(.body)
                 
                 HStack {
-                    Text("Hybrid").font(.headline)
+                    Text("Hybrid")
+                        .font(.headline)
                     Spacer()
                     Image(systemName: selectedCar.isHybrid ? "checkmark.circle" : "xmark.circle")
                 }
+                .foregroundStyle(selectedCar.isHybrid ? Color.green : Color.red)
             }
         }
     }
