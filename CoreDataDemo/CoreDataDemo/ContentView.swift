@@ -31,7 +31,15 @@ struct ContentView: View {
                     }, label: {
                         Text("Add")
                     })
+                    
                     Spacer()
+                    
+                    NavigationLink(destination: ResultsView(name: name, viewContext: viewContext), label: {
+                        Text("Find")
+                    })
+                    
+                    Spacer()
+                    
                     Button(action: {
                         print(#fileID, #function, #line, "Clear Button")
                         deleteItems(offsets: IndexSet())
