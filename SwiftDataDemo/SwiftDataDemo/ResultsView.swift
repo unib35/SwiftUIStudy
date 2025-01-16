@@ -29,7 +29,14 @@ struct ResultsView: View {
             .navigationTitle("Results")
         }
         .task {
-            let descriptor = FetchDescriptor<Product>(predicate: #Predicate<Product> { $0.name == name })
+            // iOS 18 이상에서 복잡한 SwiftData 조건에 대해서는 #Expression 을 사용한다.
+            let nameContains = #Expression<Product, Bool> { product in
+                product.name?.localizedCaseInsensitiveContains(name) ?? false
+            }
+            
+            let descriptor = FetchDescriptor<Product>(predicate: #Predicate<Product> {
+                nameContains.evaluate($0)
+            })
             do {
                 matches = try modelContext.fetch(descriptor)
             } catch {
