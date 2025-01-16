@@ -8,17 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Binding var document: ImageDocDemoDocument
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        TextEditor(text: $document.text)
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(document: .constant(ImageDocDemoDocument()))
 }
