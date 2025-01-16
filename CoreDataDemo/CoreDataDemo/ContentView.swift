@@ -51,6 +51,7 @@ struct ContentView: View {
                             Text(product.quantity ?? "Not Found")
                         }
                     }
+                    .onDelete(perform: deleteItems)
                 }
                 .navigationTitle("Product Database")
             }
@@ -61,11 +62,38 @@ struct ContentView: View {
     }
 
     private func addProduct() {
-        print(#fileID, #function, #line, "- ")
+        print(#fileID, #function, #line, "- addProduct function")
+        withAnimation {
+            let product = Product(context: viewContext)
+            product.name = name
+            product.quantity = quantity
+            
+            saveContext()
+        }
     }
 
     private func deleteItems(offsets: IndexSet) {
-        print(#fileID, #function, #line, "- ")
+        print(#fileID, #function, #line, "- deleteItems function")
+        withAnimation {
+                   offsets.map {
+                       offset in
+                       products[offset]
+                   }.forEach({
+                       element in
+                       viewContext.delete(element)
+                   })
+       //          offsets.map { products[$0] }.forEach(viewContext.delete)
+                   saveContext()
+               }
+    }
+    
+    private func saveContext() {
+        do {
+            try viewContext.save()
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
     }
 }
 
