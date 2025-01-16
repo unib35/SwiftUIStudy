@@ -14,7 +14,7 @@ struct ContentView: View {
     
     @Environment(\.modelContext) private var modelContext
     @Query private var products: [Product]
-
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -29,9 +29,9 @@ struct ContentView: View {
                         Text("Add")
                     })
                     Spacer()
-//                    NavigationLink(destination: ResultsView(name: name, viewContext: viewContext)) {
-//                        Text("Find")
-//                    }
+                    NavigationLink(destination: ResultsView(name: name)) {
+                        Text("Find")
+                    }
                     Spacer()
                     Button(action: {
                         name = ""
@@ -67,14 +67,14 @@ struct ContentView: View {
             .textFieldStyle(RoundedBorderTextFieldStyle())
         }
     }
-
+    
     private func addProduct() {
         withAnimation {
             let newItem = Product(name: name, quantity: quantity)
             modelContext.insert(newItem)
         }
     }
-
+    
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
