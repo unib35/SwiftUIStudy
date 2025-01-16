@@ -11,7 +11,18 @@ struct ContentView: View {
     @Binding var document: ImageDocDemoDocument
 
     var body: some View {
-        TextEditor(text: $document.text)
+        VStack {
+            Image(uiImage: document.image)
+                .resizable()
+                .padding()
+                .aspectRatio(contentMode: .fit)
+            Button(action: {
+                
+            }, label:  {
+                Text("Filter Image")
+            })
+            .padding()
+        }
     }
 }
 
