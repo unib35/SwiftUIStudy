@@ -43,7 +43,7 @@ struct ContentView: View {
                 .onDelete(perform: deleteItems)
                 .frame(maxHeight: .infinity)
             }
-            .navigationTitle("종민 투두리스트")
+            .navigationTitle("투두 리스트")
             .listStyle(PlainListStyle())
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
