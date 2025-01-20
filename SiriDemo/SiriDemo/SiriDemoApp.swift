@@ -18,7 +18,8 @@ struct SiriDemoApp: App {
         }
         .onChange(of: scenePhase) { phase in
             INPreferences.requestSiriAuthorization({ status in
-                print(status)
+                // 권한 상태 처리
+                print("Siri authorization status: \(status.rawValue)")
             })
         }
     }
