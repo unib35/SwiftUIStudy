@@ -23,7 +23,7 @@ struct AddTodoView: View {
             .navigationTitle("New Todo")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading, content: {
-                    Button("cancel") {
+                    Button("Cancel") {
                         dismiss()
                     }
                 })

@@ -9,14 +9,13 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var todos: [TodoItem]
-    
     @State private var showingAddTodo = false
+    @State private var searchText = ""
     
     var body: some View {
         NavigationStack {
-            TodoListView()
+            TodoListView(searchText: searchText)
+                .searchable(text: $searchText)
                 .navigationTitle("Todo List")
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
@@ -30,15 +29,14 @@ struct ContentView: View {
                         }
                     }
                 }
-        }
-        .sheet(isPresented: $showingAddTodo) {
-            AddTodoView()
+                .sheet(isPresented: $showingAddTodo) {
+                    AddTodoView()
+            }
         }
     }
-    
 }
 
 #Preview {
     ContentView()
-        .modelContainer(for: TodoItem.self, inMemory: true)
+        .modelContainer(PreviewContainer.shared.container)
 }
