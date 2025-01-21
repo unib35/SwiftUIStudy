@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+
 struct PriorityBadge: View {
     let priority: Priority
     
@@ -26,6 +27,7 @@ struct PriorityBadge: View {
         }
     }
 }
+
 #Preview {
     PriorityBadge(priority: TodoItem(title: "Hello, world!").priority)
 }
