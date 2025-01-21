@@ -71,7 +71,8 @@ struct AddTodoView: View {
                     Button("Save") {
                         let todo = TodoItem(title: title,
                                             priority: priority,
-                                            dueDate: dueDateEnabled ? dueDate : nil)
+                                            dueDate: dueDateEnabled ? dueDate : nil,
+                                            category: selectedCategory)
                         modelContext.insert(todo)
                         // 뷰 닫기와 동시에 모델 컨텍스트 저장이 호출된다.
                         dismiss()
