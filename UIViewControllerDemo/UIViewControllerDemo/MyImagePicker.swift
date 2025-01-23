@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct MyImagePicker: UIViewControllerRepresentable {
+    
+    @Binding var imagePickerVisible: Bool
+    @Binding var selectedImage: Image?
+    
     func makeUIViewController(context: Context) -> UIImagePickerController {
         let picker = UIImagePickerController()
         return picker
@@ -19,5 +23,5 @@ struct MyImagePicker: UIViewControllerRepresentable {
 }
 
 #Preview {
-    MyImagePicker()
+    MyImagePicker(imagePickerVisible: .constant(false), selectedImage: .constant(nil))
 }
