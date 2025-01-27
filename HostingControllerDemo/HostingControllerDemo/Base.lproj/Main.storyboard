@@ -24,6 +24,14 @@
             </objects>
             <point key="canvasLocation" x="-869" y="-121"/>
         </scene>
+        <!--Hosting Controller-->
+        <scene sceneID="4z2-Au-vQB">
+            <objects>
+                <hostingController id="iTQ-rS-118" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mW5-ce-SUd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-228" y="-765"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -37,16 +45,26 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Button"/>
                                 <connections>
-                                    <segue destination="KMC-3T-Hua" kind="show" id="xG1-T3-Pk1"/>
+                                    <segue destination="KMC-3T-Hua" kind="show" destinationCreationSelector="showSwiftUIView:" id="xG1-T3-Pk1"/>
                                 </connections>
                             </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uZ1-t6-hA6">
+                                <rect key="frame" x="20" y="227" width="353" height="159"/>
+                                <connections>
+                                    <segue destination="iTQ-rS-118" kind="embed" destinationCreationSelector="embendSwiftUIView:" id="FNx-9G-D7x"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="uZ1-t6-hA6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="KVQ-05-gei"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uZ1-t6-hA6" secondAttribute="bottom" constant="432" id="LFx-F7-mVy"/>
                             <constraint firstItem="t0v-cI-H9A" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="N6H-XO-QX3"/>
+                            <constraint firstItem="uZ1-t6-hA6" firstAttribute="firstBaseline" secondItem="t0v-cI-H9A" secondAttribute="baseline" constant="50" id="X7a-bR-bFk"/>
                             <constraint firstItem="t0v-cI-H9A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="bR7-87-Hi2"/>
                             <constraint firstItem="t0v-cI-H9A" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="lp2-dc-AWK"/>
+                            <constraint firstItem="uZ1-t6-hA6" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="sqV-j2-XrL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iGn-WQ-o2Y"/>

@@ -8,11 +8,21 @@
 import SwiftUI
 
 struct SwiftUIView: View {
+    
+    var text: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text(text)
+            HStack {
+                Image(systemName: "smiley")
+                Text("This is a SwiftUI View")
+            }
+        }
+        .font(.largeTitle)
     }
 }
 
 #Preview {
-    SwiftUIView()
+    SwiftUIView(text: "Sample Text")
 }
