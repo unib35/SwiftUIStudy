@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  SuperBaseDemo
+//  SupabaseDemo
 //
 //  Created by 이종민 on 2/3/25.
 //
