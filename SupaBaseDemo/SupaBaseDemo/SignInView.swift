@@ -7,9 +7,36 @@
 
 import SwiftUI
 
+class SignInVIewModel: ObservableObject {
+    
+    func signInWithApple() {
+        
+    }
+    
+    
+}
+
+
 struct SignInView: View {
+    @StateObject var viewModel = SignInVIewModel()
+    let signInApple = SignInApple()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button {
+            print(#fileID, #function, #line, " - apple login button")
+            signInApple.startSignInWithAppleFlow { result in
+                switch result {
+                case .success(let appleResult):
+                    print(appleResult)
+                case .failure(_ ):
+                    print("error")
+                }
+            }
+        } label: {
+            Text("Sign in with Apple")
+                .foregroundStyle(.black)
+        }
+
     }
 }
 
