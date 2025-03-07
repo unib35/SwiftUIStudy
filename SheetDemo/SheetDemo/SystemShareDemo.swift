@@ -1,5 +1,5 @@
 //
-//  SystemShare.swift
+//  SystemShareDemo.swift
 //  SheetDemo
 //
 //  Created by 이종민 on 3/8/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SystemShare: View {
+struct SystemShareDemo: View {
     @State private var isShowingShareSheet = false
     let textToShare = "공유할 내용"
     
@@ -35,5 +35,5 @@ struct ShareSheet: UIViewControllerRepresentable {
 }
 
 #Preview {
-    SystemShare()
+    SystemShareDemo()
 }
