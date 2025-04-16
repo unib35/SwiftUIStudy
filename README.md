@@ -79,3 +79,6 @@ SwiftUI에서는 와 을 사용하여 UI와 데이터를 연결한다.
 
 ### GeometryReader
 `GeometryReader`는 자식 뷰에 해당 뷰의 크기나 위치 정보를 전달해주는 뷰입니다. 뷰의 동적인 위치 계산이나 반응형 레이아웃을 만들 때 유용하게 활용됩니다.
+
+### ScrollView & LazyVStack
+`ScrollView`는 뷰를 스크롤 가능하게 만들고, `LazyVStack`은 성능을 고려하여 필요한 시점에 뷰를 렌더링해줍니다. 리스트 형태를 커스터마이징할 때 자주 사용됩니다.
