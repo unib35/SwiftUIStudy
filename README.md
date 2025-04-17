@@ -82,3 +82,6 @@ SwiftUI에서는 와 을 사용하여 UI와 데이터를 연결한다.
 
 ### ScrollView & LazyVStack
 `ScrollView`는 뷰를 스크롤 가능하게 만들고, `LazyVStack`은 성능을 고려하여 필요한 시점에 뷰를 렌더링해줍니다. 리스트 형태를 커스터마이징할 때 자주 사용됩니다.
+
+### Animation
+SwiftUI에서 `withAnimation` 블록이나 `.animation()` modifier를 사용하면 부드러운 뷰 전환이 가능합니다. 다양한 커스텀 애니메이션 효과도 적용할 수 있습니다.
