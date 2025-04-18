@@ -85,3 +85,6 @@ SwiftUI에서는 와 을 사용하여 UI와 데이터를 연결한다.
 
 ### Animation
 SwiftUI에서 `withAnimation` 블록이나 `.animation()` modifier를 사용하면 부드러운 뷰 전환이 가능합니다. 다양한 커스텀 애니메이션 효과도 적용할 수 있습니다.
+
+### matchedGeometryEffect
+`matchedGeometryEffect`는 두 뷰 간의 위치, 크기 등을 애니메이션으로 자연스럽게 연결해주는 효과입니다. Hero 애니메이션이나 상세 페이지 전환에 사용됩니다.
