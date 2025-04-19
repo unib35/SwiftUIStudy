@@ -88,3 +88,6 @@ SwiftUI에서 `withAnimation` 블록이나 `.animation()` modifier를 사용하�
 
 ### matchedGeometryEffect
 `matchedGeometryEffect`는 두 뷰 간의 위치, 크기 등을 애니메이션으로 자연스럽게 연결해주는 효과입니다. Hero 애니메이션이나 상세 페이지 전환에 사용됩니다.
+
+### @EnvironmentObject
+`@EnvironmentObject`는 여러 뷰 계층에서 공유되는 전역 상태를 관리할 때 사용됩니다. 예: 로그인 상태, 다크모드 설정 등 앱 전역 데이터 전달
