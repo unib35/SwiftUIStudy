@@ -94,3 +94,6 @@ SwiftUI에서 `withAnimation` 블록이나 `.animation()` modifier를 사용하�
 
 ### AppStorage
 `AppStorage`는 `UserDefaults`에 바인딩되어 간단한 데이터(설정값 등)를 저장하고 유지할 수 있는 속성 래퍼입니다. 선언형으로 간편하게 상태 유지가 가능함
+
+### Accessibility 대응
+`accessibilityLabel`, `accessibilityValue` 등의 수식어를 사용하여 VoiceOver와 같은 보조 기능을 위한 접근성을 개선할 수 있습니다. 사용자 경험 향상에 필수적입니다.
